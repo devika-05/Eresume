@@ -1,0 +1,135 @@
+// 🎨 Theme Variables (Keeping Consistent with Portfolio)
+$primary: #0d0d2b;   // Deep Dark Blue
+$secondary: #1a1a40; // Slightly Lighter Background
+$accent: #00e5ff;    // Neon Pink
+$accent-light: #00e5ff; // Neon Cyan
+$text: #ffffff;      // Bright White
+$hover-glow: rgba(0, 229, 255, 0.5); // Cyan Glow
+$shadow: rgba(255, 64, 129, 0.3); // Soft Neon Glow
+
+$primary-font: 'Teko', sans-serif;
+$secondary-font: 'Roboto', sans-serif;
+
+// 📌 Certifications Wrapper
+.certification-wrapper {
+  padding: 3rem;
+  background: linear-gradient(135deg, $primary, $secondary);
+  color: $text;
+}
+
+// 🏆 Section Title (Same as Projects & Experience Title)
+.section-title {
+  font-family: $primary-font;
+  font-size: 3rem;
+  text-align: left;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+  color: $text;
+}
+
+// 🔲 Certifications Grid
+.certification-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+// 🎖️ Certification Card (Badge on Left, Text on Right)
+.certification-card {
+  background: rgba(26, 26, 64, 0.9); // Matches project-card & hobby-card
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  border: 2px solid transparent; // No border initially
+  position: relative;
+  display: flex;
+  align-items: center; // Aligns items horizontally
+  padding: 1.5rem;
+  gap: 1rem;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px $hover-glow;
+    border-color: $accent-light; // Neon Cyan Border on Hover
+  }
+
+  .badge {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: contain;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    box-shadow: 0 0 8px $accent;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .certification-info {
+    flex: 1; // Takes up remaining space
+
+    h3 {
+      font-family: $primary-font;
+      font-size: 1.6rem;
+      color: $text;
+      text-shadow: 0 0 6px $accent-light;
+      margin: 0;
+    }
+
+    .issuer {
+      font-size: 1rem;
+      color: $accent;
+      font-weight: bold;
+      margin: 0.3rem 0;
+    }
+
+    .dates {
+      font-size: 0.9rem;
+      color: #bbb;
+    }
+
+    .description {
+      font-size: 0.9rem;
+      color: #ddd;
+      margin-top: 0.5rem;
+    }
+
+    .credential-link {
+      display: inline-block;
+      font-size: 1rem;
+      color: $accent-light;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 0.5rem;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $accent;
+        text-shadow: 0 0 8px $accent;
+      }
+    }
+  }
+}
+
+// 📱 Responsive Design
+@media (max-width: 768px) {
+  .certification-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  .certification-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .badge {
+    width: 70px;
+    height: 70px;
+  }
+}

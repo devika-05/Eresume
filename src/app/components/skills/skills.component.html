@@ -1,0 +1,31 @@
+<div class="skills-wrapper">
+  <h2 class="section-title">Skills</h2>
+
+  <div class="skills-category-columns">
+    <div *ngFor="let category of skillCategories" class="skill-category-group">
+      <h3 class="category-title">{{ category }}</h3>
+      <div class="skills-grid">
+        <div class="skill-float" *ngFor="let skill of groupedSkills[category]">
+          <div class="skill-card">
+            <img [src]="skill.iconUrl" alt="{{ skill.name }}" class="skill-icon" />
+            <div class="skill-details">
+              <h4>{{ skill.name }}</h4>
+              <div class="progress-container">
+                <div class="progress-bar">
+                  <div
+                    class="progress-fill"
+                    [ngStyle]="{
+                      width: skill.proficiency + '%',
+                      background: getBarColor(skill.proficiency)
+                    }"
+                  ></div>
+                </div>
+                <span class="proficiency-label">{{ skill.proficiency }}%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

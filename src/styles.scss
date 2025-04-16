@@ -1,1 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
+// 🌟 Global SCSS Fix
+// 🎨 Global Font Styles - Futuristic
+$primary-font: 'Orbitron', sans-serif;
+$secondary-font: 'Rajdhani', sans-serif;
+
+body {
+  font-family: $secondary-font;
+  background: #1e1e1e;
+  color: #ffffff;
+}
+
+// 🎨 Color Variables
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$background-light: #f4f4f4;
+$background-dark: #1e1e2f;
+$text-light: #fff;
+$text-dark: #333;
+$card-bg: #ffffff;
+$border-radius: 8px;
+$transition-speed: 0.3s;
+
+// 🌙 Dark Mode (Manually Change This Variable)
+$dark-mode: false;
+
+// ✨ Global Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+// ✅ Proper Dark Mode Handling
+body {
+  transition: background $transition-speed ease-in-out, color $transition-speed ease-in-out;
+
+  @if $dark-mode {
+    background: $background-dark;
+    color: $text-light;
+  } @else {
+    background: $background-light;
+    color: $text-dark;
+  }
+}

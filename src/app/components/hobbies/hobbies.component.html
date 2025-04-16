@@ -1,0 +1,13 @@
+<div class="hobbies-wrapper">
+  <h2 class="section-title">Hobbies</h2>
+  <div class="hobbies-grid">
+    <div class="hobby-card" *ngFor="let hobby of hobbies">
+      <img [src]="hobby.iconUrl" alt="{{ hobby.name }}" class="hobby-icon" />
+      <div class="hobby-details">
+        <h3>{{ hobby.name }}</h3>
+        <p class="category">{{ hobby.category }}</p>
+        <p>{{ hobby.description }}</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="carousel-container">
+  <owl-carousel-o [options]="owlOptions" *ngIf="items.length > 0">
+    <ng-container *ngFor="let item of items">
+      <ng-template carouselSlide>
+        <div class="carousel-item-container">
+          <ng-container [ngTemplateOutlet]="item"></ng-container>
+        </div>
+      </ng-template>
+    </ng-container>
+  </owl-carousel-o>
+
+  <div class="carousel-empty-state" *ngIf="items.length === 0">
+    <p>No items to display in the carousel.</p>
+  </div>
+</div>

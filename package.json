@@ -18,7 +18,11 @@
     "@angular/platform-browser": "^17.3.0",
     "@angular/platform-browser-dynamic": "^17.3.0",
     "@angular/router": "^17.3.0",
+    "angular-feather": "^6.5.1",
+    "lucide-angular": "^0.487.0",
+    "portfolio": "file:",
     "rxjs": "~7.8.0",
+    "swiper": "^8.4.7",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
   },

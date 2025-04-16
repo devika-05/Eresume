@@ -1,0 +1,115 @@
+// 🎨 Theme Variables (Keeping Consistent with Portfolio)
+$primary: #0d0d2b;   // Deep Dark Blue
+$secondary: #1a1a40; // Slightly Lighter Blue
+$accent: #00e5ff;    // Neon Pink
+$accent-light: #00e5ff; // Neon Cyan
+$text: #ffffff;      // Bright White
+$hover-glow: rgba(0, 229, 255, 0.5); // Cyan Glow
+$shadow: rgba(255, 64, 129, 0.3); // Soft Neon Glow
+
+$primary-font: 'Teko', sans-serif;
+$secondary-font: 'Roboto', sans-serif;
+
+// 🎭 Hobbies Wrapper
+.hobbies-wrapper {
+  padding: 3rem;
+  background: linear-gradient(135deg, $primary, $secondary);
+  color: $text;
+}
+
+// 🔠 Section Title (Same as Certifications & Projects)
+.section-title {
+  font-family: $primary-font;
+  font-size: 3rem;
+  text-align: left;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+  color: $text;
+}
+
+// 🎭 Hobbies Grid
+.hobbies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+// 🔲 Hobby Card (Icon Left, Text Right)
+.hobby-card {
+  background: rgba(26, 26, 64, 0.9); // Matches project-card
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  border: 2px solid transparent; // No border initially
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  gap: 1rem;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px $hover-glow;
+    border-color: $accent-light; // Neon Cyan Border on Hover
+  }
+
+  .hobby-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    object-fit: contain;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    box-shadow: 0 0 8px $accent;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .hobby-details {
+    flex: 1;
+
+    h3 {
+      font-family: $primary-font;
+      font-size: 1.6rem;
+      color: $text;
+      text-shadow: 0 0 6px $accent-light;
+      margin: 0;
+    }
+
+    .category {
+      font-size: 1rem;
+      color: $accent;
+      font-weight: bold;
+      margin: 0.3rem 0;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: #ddd;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+// 📱 Responsive Design
+@media (max-width: 768px) {
+  .hobbies-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  .hobby-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hobby-icon {
+    width: 70px;
+    height: 70px;
+  }
+}

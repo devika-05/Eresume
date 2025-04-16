@@ -1,0 +1,26 @@
+<div class="contact-wrapper">
+  <div class="icon-row">
+    <div
+      class="icon-container"
+      *ngFor="let item of contactItems"
+      (click)="toggleContact(item.key)"
+    >
+      <span class="emoji-icon">{{ item.icon }}</span>
+      <div
+        class="contact-popup"
+        *ngIf="activeContact === item.key"
+        (click)="$event.stopPropagation()"
+      >
+        <a
+          *ngIf="item.isLink"
+          [href]="item.value"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {{ item.value }}
+        </a>
+        <span *ngIf="!item.isLink">{{ item.value }}</span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,100 @@
+// 🌟 About Section Styling
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; // ⬅️ Pushes name to the left & image to the right
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+// 🎭 Text Section (Fully Left)
+.text-section {
+  flex: 1;
+  text-align: left;
+  align-self: flex-start; // ⬅️ Aligns text content to the top-left
+
+  h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #222;
+  }
+
+  .animated-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #007bff;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #007bff;
+    animation: typing 5s steps(50, end) infinite, blink 0.5s step-end infinite;
+    max-width: 18ch; // ✅ Stops after 10 characters including spaces
+  }
+
+
+  .location {
+    color: #666;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .summary {
+    max-width: 500px;
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #333;
+  }
+}
+
+// 🎭 Image Section (Fully Right)
+.image-section {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; // ⬅️ Pushes image to the right
+  align-items: flex-start;
+
+  .profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  }
+}
+
+// 🖋️ **Slower Typing Animation**
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+// ✨ **Smooth Cursor Blink**
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+// 📱 Responsive Design (Mobile View)
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .text-section {
+    text-align: center;
+    align-self: center;
+  }
+
+  .image-section {
+    justify-content: center;
+  }
+}

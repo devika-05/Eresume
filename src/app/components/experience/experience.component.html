@@ -1,0 +1,28 @@
+<div class="experience-wrapper">
+  <h2 class="section-title">Experience</h2>
+  <div class="experience-grid">
+    <div class="experience-card" *ngFor="let exp of experiences">
+      <img [src]="exp.companyLogoUrl" alt="{{ exp.company }}" class="company-logo" />
+      <div class="experience-details">
+        <h3>{{ exp.position }}</h3>
+        <h4>{{ exp.company }} - {{ exp.location }}</h4>
+        <p class="date-range">{{ formatDate(exp.startDate) }} - {{ exp.current ? 'Present' : formatDate(exp.endDate) }}</p>
+        <p>{{ exp.description }}</p>
+
+        <div *ngIf="exp.responsibilities?.length">
+          <h5>Responsibilities:</h5>
+          <ul>
+            <li *ngFor="let responsibility of exp.responsibilities">{{ responsibility }}</li>
+          </ul>
+        </div>
+
+        <div *ngIf="exp.achievements?.length">
+          <h5>Achievements:</h5>
+          <ul>
+            <li *ngFor="let achievement of exp.achievements">{{ achievement }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

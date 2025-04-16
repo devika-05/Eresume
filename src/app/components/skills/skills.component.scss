@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+
+// 🎨 Define Color Variables
+$primary: #0d0d2b;
+$secondary: #1a1a40;
+$accent: #00e5ff;
+$accent-light: #00e5ff;
+$text: #ffffff;
+$hover-shadow: rgba(0, 229, 255, 0.5);
+$hover-glow: rgba(0, 229, 255, 0.5);
+
+// 🎨 Font Variables
+$primary-font: 'Orbitron', sans-serif;
+$secondary-font: 'Roboto', sans-serif;
+
+// 🎯 Main Wrapper
+.skills-wrapper {
+  position: relative;
+  padding: 2rem;
+  background: linear-gradient(135deg, $primary, $secondary);
+  color: $text;
+  font-family: $secondary-font;
+  overflow: hidden;
+  z-index: 1;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, $accent-light 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: floatParticles 30s linear infinite;
+    opacity: 0.12;
+    z-index: 0;
+    pointer-events: none;
+  }
+}
+
+// 🌌 Animation Keyframes
+@keyframes floatParticles {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-25px, -25px);
+  }
+}
+
+// 🏆 Section Title
+.section-title {
+  font-family: $primary-font;
+  font-size: 2.1rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 12px $accent-light;
+  z-index: 1;
+  position: relative;
+}
+
+// 🌐 Skill Categories Row - Horizontal Scroll
+.skills-category-columns {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 2rem;
+  padding-bottom: 1rem;
+
+  &::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $accent;
+    border-radius: 4px;
+  }
+}
+
+// 📌 Skill Category Titles
+.skill-category-group {
+  min-width: 280px;
+  flex: 0 0 auto;
+}
+
+.category-title {
+  font-family: $primary-font;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: $accent;
+  border-left: 5px solid $accent;
+  padding-left: 12px;
+  z-index: 1;
+  position: relative;
+}
+
+// 🔳 Skills Grid Layout
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+// 🛠️ Skill Card
+.skill-card {
+  background: $secondary;
+  border-radius: 10px;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  box-shadow: 0 0 15px $hover-shadow;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  border: 2px solid transparent;
+  position: relative;
+  z-index: 1;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px $hover-shadow;
+    border-color: $accent;
+  }
+}
+
+// 🌟 Skill Icon
+.skill-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 5px;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: rotate(10deg);
+  }
+}
+
+// 🔹 Skill Details
+.skill-details {
+  flex-grow: 1;
+  font-family: $secondary-font;
+
+  h4 {
+    font-family: $primary-font;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+    margin-bottom: 5px;
+  }
+
+  .progress-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .progress-bar {
+    flex: 1;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.6s ease-in-out;
+  }
+
+  .proficiency-label {
+    font-family: $primary-font;
+    font-size: 0.7rem;
+    font-weight: bold;
+    width: 50px;
+    color: $accent;
+  }
+}

@@ -16,6 +16,9 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
+    "paths": {
+      "swiper/angular": ["./node_modules/swiper/angular"]
+    },
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,

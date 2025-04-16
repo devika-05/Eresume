@@ -1,0 +1,27 @@
+<div class="projects-wrapper">
+  <h2 class="section-title">Projects</h2>
+  <div class="projects-grid">
+    <div class="project-card" *ngFor="let project of projects">
+      <img [src]="project.imageUrl" alt="{{ project.name }}" class="project-image" />
+      <div class="project-content">
+        <h3>{{ project.name }}</h3>
+        <p>{{ project.description }}</p>
+        <p class="role">Role: {{ project.role }}</p>
+        <div class="duration">
+          {{ formatDate(project.startDate) }} -
+          {{ project.ongoing ? 'Present' : formatDate(project.completionDate) }}
+        </div>
+        <ul class="features">
+          <li *ngFor="let feature of project.keyFeatures">{{ feature }}</li>
+        </ul>
+        <div class="tech-tags">
+          <span *ngFor="let tech of project.technologies" class="tech">{{ tech }}</span>
+        </div>
+        <div class="project-links">
+          <a *ngIf="project.demoUrl" [href]="project.demoUrl" target="_blank">Live Demo</a>
+          <a *ngIf="project.githubUrl" [href]="project.githubUrl" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

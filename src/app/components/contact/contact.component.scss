@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+
+// 🎨 Color Scheme
+$primary: #0d0d2b;
+$secondary: #1a1a40;
+$accent: #00e5ff;
+$text: #ffffff;
+$glow: rgba(0, 229, 255, 0.6);
+
+.contact-wrapper {
+  padding: 2rem;
+}
+
+
+
+.icon-row {
+  display: flex;
+  justify-content: flex-start; // align to left
+  flex-wrap: wrap;
+  gap: 4rem;
+}
+
+.icon-container {
+  position: relative;
+  cursor: pointer;
+  font-size: 2rem;
+  transition: transform 0.2s ease;
+}
+
+.icon-container:hover {
+  transform: scale(1.1);
+}
+
+.contact-popup {
+  position: absolute;
+  top: 2.5rem;
+  left: 0; // align to left edge of the icon
+  background: #ffffff;
+  color: #000;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  white-space: nowrap;
+  z-index: 10;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+  font-size: 0.9rem;
+  transform: none; // remove center transform
+}
+

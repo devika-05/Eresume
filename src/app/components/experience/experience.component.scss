@@ -1,0 +1,158 @@
+// 🎨 Theme Variables
+$primary: #0d0d2b;   // Deep Dark Blue
+$secondary: #1a1a40; // Dark Blue
+$accent: #00e5ff;    // Neon Blue
+$text: #ffffff;      // Bright White
+$hover-shadow: rgba(0, 198, 255, 0.5); // Neon Blue Glow
+$border-glow: rgba(0, 198, 255, 0.7); // Brighter Neon Glow
+
+// 🎨 Font Variables
+$primary-font: 'Teko', sans-serif;
+$secondary-font: 'Roboto', sans-serif;
+
+// ✨ Animations
+@keyframes neonGlow {
+  0% { box-shadow: 0 0 10px $hover-shadow; }
+  50% { box-shadow: 0 0 20px $hover-shadow; }
+  100% { box-shadow: 0 0 10px $hover-shadow; }
+}
+
+// 🎯 Experience Section Wrapper
+.experience-wrapper {
+  padding: 3rem;
+  background: linear-gradient(135deg, $primary, $secondary);
+  color: $text;
+}
+
+// 🏆 Section Title (Consistent with Other Sections)
+.section-title {
+  font-family: $primary-font;
+  font-size: 3rem;
+  text-align: left;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+  color: $text;
+}
+
+// 🗂️ Experience Grid
+.experience-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+// 🔳 Experience Card
+.experience-card {
+  display: flex;
+  gap: 1.5rem;
+  background: rgba(26, 26, 64, 0.9); // Matches project-card & hobby-card
+  border-radius: 12px;
+  padding: 1.8rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  border: 2px solid transparent;
+  position: relative;
+  opacity: 1;
+  transform: translateY(0);
+
+  &:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 25px $hover-shadow;
+    border-color: $border-glow;
+    animation: neonGlow 1.5s infinite alternate;
+  }
+
+  &:active {
+    transform: scale(1);
+    box-shadow: 0 0 30px $hover-shadow;
+    border-color: $accent;
+  }
+
+  // 🏢 Company Logo
+  .company-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px;
+    box-shadow: 0 0 8px $accent;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: rotate(8deg) scale(1.1);
+    }
+  }
+
+  // 📌 Experience Details
+  .experience-details {
+    flex-grow: 1;
+    font-family: $secondary-font;
+
+    h3 {
+      font-family: $primary-font;
+      font-size: 1.6rem;
+      font-weight: 700;
+      text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+      margin-bottom: 5px;
+    }
+
+    h4 {
+      font-size: 1.1rem;
+      margin: 0.3rem 0;
+      color: $accent;
+      font-weight: 600;
+    }
+
+    .date-range {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 0.8rem;
+    }
+
+    ul {
+      list-style: none; // Removes default bullet points
+      padding-left: 0; // Removes default indentation
+
+      li {
+        position: relative;
+        padding-left: 25px; // Space for the thunder icon
+        font-size: 1rem;
+        transition: transform 0.2s ease-in-out;
+
+        &::before {
+          content: '⚡'; // Thunder icon
+          position: absolute;
+          left: 0;
+          color: $accent; // Now Neon Blue
+          font-size: 1.2rem;
+        }
+
+        &:hover {
+          transform: translateX(5px);
+          color: $accent;
+        }
+      }
+    }
+  }
+}
+
+// 📱 Responsive Design
+@media (max-width: 768px) {
+  .experience-grid {
+    flex-direction: column;
+  }
+
+  .experience-card {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .company-logo {
+    width: 70px;
+    height: 70px;
+  }
+}

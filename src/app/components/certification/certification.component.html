@@ -1,0 +1,18 @@
+<div class="certification-wrapper">
+  <h2 class="section-title">Certifications</h2>
+  <div class="certification-grid">
+    <div class="certification-card" *ngFor="let cert of certifications">
+      <img [src]="cert.badgeUrl" alt="{{ cert.name }}" class="badge" />
+      <div class="certification-info">
+        <h3>{{ cert.name }}</h3>
+        <p class="issuer">{{ cert.issuer }}</p>
+        <p class="dates">
+          Issued: {{ formatDate(cert.issueDate) }}<br />
+          Expires: {{ cert.noExpiry ? 'No Expiry' : formatDate(cert.expiryDate) }}
+        </p>
+        <p class="description">{{ cert.description }}</p>
+        <a [href]="cert.credentialUrl" target="_blank" class="credential-link">Verify Credential</a>
+      </div>
+    </div>
+  </div>
+</div>
